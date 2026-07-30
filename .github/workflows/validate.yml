@@ -1,0 +1,43 @@
+name: Validate Marketplace PR
+
+on:
+  pull_request:
+    paths:
+      - "registry/**"
+      - ".github/workflows/validate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Marketplace proposal
+        uses: actions/checkout@v4
+        with:
+          path: marketplace
+
+      - name: Checkout Codmes validator
+        uses: actions/checkout@v4
+        with:
+          repository: jeongu0569-ui/Codmes
+          ref: feat/knu-plugin-mcp
+          path: codmes
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install validator dependencies
+        working-directory: codmes
+        run: npm install --ignore-scripts
+
+      - name: Verify Registry, package checksums, and Publisher signatures
+        run: |
+          node codmes/bin/codmes.mjs plugin registry validate \
+            --registry marketplace/registry/index.json \
+            --production \
+            --verify-assets

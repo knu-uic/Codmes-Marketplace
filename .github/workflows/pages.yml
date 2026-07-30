@@ -1,0 +1,95 @@
+name: Deploy signed Marketplace Registry
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "registry/**"
+      - "site/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Marketplace source
+        uses: actions/checkout@v4
+        with:
+          path: marketplace
+
+      - name: Checkout Codmes publisher CLI
+        uses: actions/checkout@v4
+        with:
+          repository: jeongu0569-ui/Codmes
+          ref: feat/knu-plugin-mcp
+          path: codmes
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install publisher dependencies
+        working-directory: codmes
+        run: npm install --ignore-scripts
+
+      - name: Verify production Registry and immutable release assets
+        run: |
+          node codmes/bin/codmes.mjs plugin registry validate \
+            --registry marketplace/registry/index.json \
+            --production \
+            --verify-assets
+
+      - name: Build static Registry
+        run: |
+          node codmes/bin/codmes.mjs plugin registry build \
+            --registry marketplace/registry/index.json \
+            --output-dir public \
+            --production
+          cp marketplace/site/index.html public/index.html
+
+      - name: Restore Registry signing key
+        env:
+          REGISTRY_PRIVATE_KEY: ${{ secrets.MARKETPLACE_REGISTRY_PRIVATE_KEY }}
+        run: |
+          test -n "$REGISTRY_PRIVATE_KEY"
+          umask 077
+          printf '%s' "$REGISTRY_PRIVATE_KEY" > registry-private-key.pem
+
+      - name: Sign exact Registry bytes
+        run: |
+          node codmes/bin/codmes.mjs plugin registry sign \
+            --registry public/index.json \
+            --sign-key registry-private-key.pem \
+            --root-id com.codmes.marketplace \
+            --output public/index.sig.json
+          rm -f registry-private-key.pem
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

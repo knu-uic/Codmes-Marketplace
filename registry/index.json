@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-30T03:08:41.424Z",
+  "signaturePolicy": "required",
+  "governancePolicy": "reviewed",
+  "publishers": [
+    {
+      "id": "com.codmes",
+      "name": "Codmes",
+      "status": "approved",
+      "repositoryUrl": null,
+      "approvedAt": null,
+      "suspendedAt": null,
+      "suspensionReason": null,
+      "keys": [
+        {
+          "algorithm": "ed25519",
+          "keyId": "ed25519:fa2ad60a1df27832979446126c153eca",
+          "publicKey": "MCowBQYDK2VwAyEAXvlKoOBOvL7lCA1+BhX6YFGAJmgVKujR6VE2V7xIoJo=",
+          "status": "active",
+          "addedAt": null,
+          "retiredAt": null,
+          "revokedAt": null,
+          "revocationReason": null
+        }
+      ]
+    },
+    {
+      "id": "kr.ac.kongju.knu",
+      "name": "KNU AI Assistant",
+      "status": "approved",
+      "repositoryUrl": null,
+      "approvedAt": null,
+      "suspendedAt": null,
+      "suspensionReason": null,
+      "keys": [
+        {
+          "algorithm": "ed25519",
+          "keyId": "ed25519:13122716edce19defe2e4a2a06295946",
+          "publicKey": "MCowBQYDK2VwAyEAu3PASsYpQIsH7CDMbrHeaRsZWiupv6/OxfDmEg1sZz8=",
+          "status": "active",
+          "addedAt": null,
+          "retiredAt": null,
+          "revokedAt": null,
+          "revocationReason": null
+        }
+      ]
+    }
+  ],
+  "blockedVersions": [],
+  "plugins": [
+    {
+      "id": "kr.ac.kongju.knu",
+      "name": "KNU",
+      "version": "0.3.0",
+      "description": "공주대학교 공지 Surface와 Codmes용 검색 도구를 함께 제공합니다.",
+      "publisher": "KNU AI Assistant",
+      "category": "Education",
+      "icon": "graduationcap",
+      "verified": true,
+      "featured": true,
+      "packagePath": null,
+      "packageUrl": "https://github.com/knu-uic/knu-ai-assistant/releases/download/kr.ac.kongju.knu-v0.3.0/kr.ac.kongju.knu-0.3.0.codmes-plugin",
+      "sha256": "af753bd780e03c55eaeb98975ee4b56dda6298fe9f53521389f0e396ea2c8672",
+      "signature": {
+        "algorithm": "ed25519",
+        "publisherId": "kr.ac.kongju.knu",
+        "keyId": "ed25519:13122716edce19defe2e4a2a06295946"
+      },
+      "dataVersion": 1,
+      "releaseNotes": "KNU 최초 Marketplace 정식 배포입니다. 공주대학교 공지·LMS·포털 데이터를\nCodmes native Surface로 표시하고 공지 검색·상세 조회 MCP 도구를 제공합니다.",
+      "platforms": [
+        "macos",
+        "ios",
+        "ipados"
+      ],
+      "permissions": [
+        "network:127.0.0.1"
+      ],
+      "repositoryUrl": "https://github.com/knu-uic/knu-ai-assistant",
+      "privacyUrl": null
+    },
+    {
+      "id": "com.codmes.planner",
+      "name": "Planner",
+      "version": "0.2.0",
+      "description": "할 일, 일정, 간단한 텍스트 메모를 한곳에서 관리하는 native Planner Surface와 AI 도구를 제공합니다.",
+      "publisher": "Codmes",
+      "category": "Productivity",
+      "icon": "checklist",
+      "verified": true,
+      "featured": true,
+      "packagePath": null,
+      "packageUrl": "https://github.com/jeongu0569-ui/Codmes/releases/download/com.codmes.planner-v0.2.0/com.codmes.planner-0.2.0.codmes-plugin",
+      "sha256": "a43a150b396fbdd2c251c7b7ebb27c4a4518020b009372f9f3c1935ea4d93993",
+      "signature": {
+        "algorithm": "ed25519",
+        "publisherId": "com.codmes",
+        "keyId": "ed25519:fa2ad60a1df27832979446126c153eca"
+      },
+      "dataVersion": 1,
+      "releaseNotes": "Planner 최초 Marketplace 정식 배포입니다. 할 일, 일정, 간단한 텍스트 메모를\nCodmes native Surface에서 관리하고 AI 도구로 조회·생성·수정할 수 있습니다.",
+      "platforms": [
+        "macos",
+        "ios",
+        "ipados"
+      ],
+      "permissions": [
+        "storage:workspace"
+      ],
+      "repositoryUrl": "https://github.com/jeongu0569-ui/Codmes",
+      "privacyUrl": null
+    }
+  ]
+}
