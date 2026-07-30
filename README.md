@@ -22,10 +22,10 @@ Chat·Notes·Code·Planner처럼 Codmes에 포함되는 built-in plugin은 이 R
 
 ## 공개 주소
 
-- Registry: `https://jeongu0569-ui.github.io/Codmes-Marketplace/index.json`
+- Registry: `https://knu-uic.github.io/Codmes-Marketplace/index.json`
 - Detached signature:
-  `https://jeongu0569-ui.github.io/Codmes-Marketplace/index.sig.json`
-- Health: `https://jeongu0569-ui.github.io/Codmes-Marketplace/health.json`
+  `https://knu-uic.github.io/Codmes-Marketplace/index.sig.json`
+- Health: `https://knu-uic.github.io/Codmes-Marketplace/health.json`
 
 ## 외부 개발자 등록
 
