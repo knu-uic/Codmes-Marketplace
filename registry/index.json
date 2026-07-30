@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-30T09:19:48.000Z",
+  "updatedAt": "2026-07-30T11:22:27.000Z",
   "signaturePolicy": "required",
   "governancePolicy": "reviewed",
   "publishers": [
@@ -52,22 +52,22 @@
     {
       "id": "kr.ac.kongju.knu",
       "name": "KNU",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "description": "공주대학교 공지 Surface와 Codmes용 검색 도구를 함께 제공합니다.",
       "publisher": "KNU AI Assistant",
       "category": "Education",
       "icon": "graduationcap",
       "verified": true,
       "featured": true,
-      "packagePath": "packages/kr.ac.kongju.knu-0.3.0.codmes-plugin",
-      "sha256": "af753bd780e03c55eaeb98975ee4b56dda6298fe9f53521389f0e396ea2c8672",
+      "packagePath": "packages/kr.ac.kongju.knu-0.3.1.codmes-plugin",
+      "sha256": "ecae25b767b41ee56fa8d89981d9657e763ec521a074bff0f912c38c4554be6d",
       "signature": {
         "algorithm": "ed25519",
         "publisherId": "kr.ac.kongju.knu",
         "keyId": "ed25519:13122716edce19defe2e4a2a06295946"
       },
       "dataVersion": 1,
-      "releaseNotes": "KNU 최초 Marketplace 정식 배포입니다. 공주대학교 공지·LMS·포털 데이터를\nCodmes native Surface로 표시하고 공지 검색·상세 조회 MCP 도구를 제공합니다.\n소스는 독립 Publisher 저장소에서 관리하고 설치 package는 Marketplace가 배포합니다.",
+      "releaseNotes": "포털 로그인 session token을 Surface와 MCP가 함께 사용하도록 인증을 통합했습니다.\n로그아웃 시 현재 KNU session과 Codmes credential을 함께 폐기하며, 학번별 MCP 요청 제한을 적용합니다.\n일반 사용자는 서버의 MCP_AUTH_TOKEN을 별도로 입력하지 않습니다.",
       "platforms": [
         "macos",
         "ios",
