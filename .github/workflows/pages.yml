@@ -30,7 +30,7 @@ jobs:
       - name: Checkout Codmes publisher CLI
         uses: actions/checkout@v6
         with:
-          repository: knu-uic/Codmes
+          repository: "${{ github.repository_owner }}/Codmes"
           ref: aa4f4c97f1022c399ddf54b180280c634c140dba
           path: codmes
 

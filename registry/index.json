@@ -59,8 +59,7 @@
       "icon": "graduationcap",
       "verified": true,
       "featured": true,
-      "packagePath": null,
-      "packageUrl": "https://github.com/knu-uic/codmes-plugin-knu/releases/download/kr.ac.kongju.knu-v0.3.0/kr.ac.kongju.knu-0.3.0.codmes-plugin",
+      "packagePath": "packages/kr.ac.kongju.knu-0.3.0.codmes-plugin",
       "sha256": "af753bd780e03c55eaeb98975ee4b56dda6298fe9f53521389f0e396ea2c8672",
       "signature": {
         "algorithm": "ed25519",
@@ -68,7 +67,7 @@
         "keyId": "ed25519:13122716edce19defe2e4a2a06295946"
       },
       "dataVersion": 1,
-      "releaseNotes": "KNU 최초 Marketplace 정식 배포입니다. 공주대학교 공지·LMS·포털 데이터를\nCodmes native Surface로 표시하고 공지 검색·상세 조회 MCP 도구를 제공합니다.\n소스와 Release는 knu-uic/codmes-plugin-knu 독립 저장소에서 관리합니다.",
+      "releaseNotes": "KNU 최초 Marketplace 정식 배포입니다. 공주대학교 공지·LMS·포털 데이터를\nCodmes native Surface로 표시하고 공지 검색·상세 조회 MCP 도구를 제공합니다.\n소스는 독립 Publisher 저장소에서 관리하고 설치 package는 Marketplace가 배포합니다.",
       "platforms": [
         "macos",
         "ios",

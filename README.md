@@ -11,14 +11,19 @@ Chat·Notes·Code·Planner처럼 Codmes에 포함되는 built-in plugin은 이 R
 
 ## 설치 흐름
 
-1. 개발자가 자기 저장소의 GitHub Release에 Ed25519 서명 package를 올립니다.
+1. 개발자가 Ed25519로 서명한 package를 준비합니다.
 2. 이 저장소에 Publisher와 plugin entry를 추가하는 Pull Request를 만듭니다.
 3. PR Actions가 schema, 권한, SHA-256, package 서명, Publisher 상태를 검증합니다.
 4. 운영자 검수와 merge 후 Pages workflow가 Registry를 다시 검증합니다.
-5. workflow가 정적 `index.json`을 Marketplace root key로 서명해
-   `index.sig.json`과 함께 GitHub Pages에 배포합니다.
+5. workflow가 정적 `index.json`을 Marketplace root key로 서명하고
+   `index.sig.json`, 검수된 package와 함께 GitHub Pages에 배포합니다.
 6. Codmes는 내장된 root 공개키로 Registry를 검증한 뒤 package의 Publisher
    서명을 별도로 검증합니다.
+
+Plugin entry는 Registry 기준 상대 `packagePath`를 사용합니다. 설치가 Publisher
+저장소나 GitHub 조직 URL에 의존하지 않으며, Pages workflow도 현재 저장소의
+`github.repository_owner`에서 형제 `Codmes` 저장소를 찾습니다. 조직을 다시 옮길
+때에는 Codmes의 신뢰 루트 설정 한 곳만 새 Registry 주소로 바꾸면 됩니다.
 
 ## 공개 주소
 
