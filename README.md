@@ -38,6 +38,10 @@ Plugin entry는 Registry 기준 상대 `packagePath`를 사용합니다. 설치�
 package를 준비합니다. 개인키는 이 저장소나 PR에 절대 포함하지 않습니다. 최초
 등록은 Publisher 소유권·저장소·개인정보 처리·권한을 사람이 함께 검수합니다.
 
+외부 plugin 저장소는 Codmes GitHub 저장소나 공식 조직명을 참조하지 않습니다.
+서명 package와 Registry 변경을 이 저장소에 PR로 제출하면 Marketplace Actions가
+공식 Codmes validator를 사용해 최종 검증합니다.
+
 운영 Registry는 `signaturePolicy: required`, `governancePolicy: reviewed`를
 강제합니다. 설치 후 update의 `publisherId`도 Codmes 설치 상태에 고정되므로 다른
 Publisher가 같은 plugin id를 탈취할 수 없습니다.
