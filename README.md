@@ -4,9 +4,10 @@ Codmes가 기본으로 사용하는 공식 플러그인 Registry입니다. 이 �
 서버가 아니라 검수된 `registry/index.json`의 변경 이력과 자동 검증·배포 workflow를
 관리합니다.
 
-Chat·Notes·Code·Planner처럼 Codmes에 기본 포함되는 플러그인은 이 Registry에
-등록하지 않습니다. 이 저장소는 KNU처럼 사용자가 선택해 설치하고 Codmes와
-독립적으로 업데이트·제거할 수 있는 community plugin만 배포합니다.
+Chat·Notes·Code·Planner처럼 Codmes에 포함되는 built-in plugin은 이 Registry에
+등록하지 않습니다. built-in과 community plugin은 Codmes의 같은 Plugin Runtime을
+사용하지만, 이 저장소는 KNU처럼 사용자가 선택해 설치하고 Codmes와 독립적으로
+업데이트·제거할 수 있는 community plugin만 배포합니다.
 
 ## 설치 흐름
 
