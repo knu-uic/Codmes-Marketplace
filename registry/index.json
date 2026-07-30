@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-30T03:08:41.424Z",
+  "updatedAt": "2026-07-30T06:29:06.000Z",
   "signaturePolicy": "required",
   "governancePolicy": "reviewed",
   "publishers": [
@@ -78,37 +78,6 @@
         "network:127.0.0.1"
       ],
       "repositoryUrl": "https://github.com/knu-uic/knu-ai-assistant",
-      "privacyUrl": null
-    },
-    {
-      "id": "com.codmes.planner",
-      "name": "Planner",
-      "version": "0.2.0",
-      "description": "할 일, 일정, 간단한 텍스트 메모를 한곳에서 관리하는 native Planner Surface와 AI 도구를 제공합니다.",
-      "publisher": "Codmes",
-      "category": "Productivity",
-      "icon": "checklist",
-      "verified": true,
-      "featured": true,
-      "packagePath": null,
-      "packageUrl": "https://github.com/jeongu0569-ui/Codmes/releases/download/com.codmes.planner-v0.2.0/com.codmes.planner-0.2.0.codmes-plugin",
-      "sha256": "a43a150b396fbdd2c251c7b7ebb27c4a4518020b009372f9f3c1935ea4d93993",
-      "signature": {
-        "algorithm": "ed25519",
-        "publisherId": "com.codmes",
-        "keyId": "ed25519:fa2ad60a1df27832979446126c153eca"
-      },
-      "dataVersion": 1,
-      "releaseNotes": "Planner 최초 Marketplace 정식 배포입니다. 할 일, 일정, 간단한 텍스트 메모를\nCodmes native Surface에서 관리하고 AI 도구로 조회·생성·수정할 수 있습니다.",
-      "platforms": [
-        "macos",
-        "ios",
-        "ipados"
-      ],
-      "permissions": [
-        "storage:workspace"
-      ],
-      "repositoryUrl": "https://github.com/jeongu0569-ui/Codmes",
       "privacyUrl": null
     }
   ]
