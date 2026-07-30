@@ -23,21 +23,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Marketplace source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: marketplace
 
       - name: Checkout Codmes publisher CLI
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: jeongu0569-ui/Codmes
           ref: feat/knu-plugin-mcp
           path: codmes
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "22"
+          package-manager-cache: false
 
       - name: Install publisher dependencies
         working-directory: codmes
