@@ -56,9 +56,15 @@ Registry 갱신을 한 번에 수행합니다.
 node /path/to/Codmes/bin/codmes.mjs plugin publisher prepare /path/to/plugin \
   --sign-key "$HOME/.codmes-publisher/<publisher>/private-key.pem" \
   --publisher-id <publisher-id> \
+  --package-directory <plugin-slug> \
   --registry /path/to/Codmes-Marketplace/registry/index.json \
   --release-notes-file /path/to/release-notes.md
 ```
 
-생성된 `registry/packages/<plugin-id>-<version>.codmes-plugin`과 자동 갱신된
+생성된 `registry/packages/<plugin-slug>/<version>.codmes-plugin`과 자동 갱신된
 `registry/index.json`을 같은 Pull Request에 제출합니다.
+
+KNU처럼 Marketplace 운영 조직이 관리하는 공식 Community plugin은 plugin
+저장소에서 GitHub Release를 발행하면 위 명령, package 업로드, release 브랜치 push와
+Pull Request 생성을 Actions가 대신 수행할 수 있습니다. 자동화는 Marketplace
+`main`에 직접 쓰지 않으며 검증된 Pull Request를 사람이 병합하는 단계는 유지합니다.

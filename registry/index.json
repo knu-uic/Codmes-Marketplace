@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-02T07:29:46.858Z",
+  "updatedAt": "2026-08-02T07:48:46.174Z",
   "signaturePolicy": "required",
   "governancePolicy": "reviewed",
   "publishers": [
@@ -59,7 +59,7 @@
       "icon": "graduationcap",
       "verified": true,
       "featured": true,
-      "packagePath": "packages/kr.ac.kongju.knu-0.3.3.codmes-plugin",
+      "packagePath": "packages/knu-plugin/0.3.3.codmes-plugin",
       "packageUrl": null,
       "sha256": "7a5127861c55931de1e4fab6c141ebd2f89ac684c162d7279b18502718be3440",
       "signature": {
