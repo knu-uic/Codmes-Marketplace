@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-30T11:22:27.000Z",
+  "updatedAt": "2026-08-02T07:29:46.858Z",
   "signaturePolicy": "required",
   "governancePolicy": "reviewed",
   "publishers": [
@@ -52,22 +52,23 @@
     {
       "id": "kr.ac.kongju.knu",
       "name": "KNU",
-      "version": "0.3.1",
+      "version": "0.3.3",
       "description": "공주대학교 공지 Surface와 Codmes용 검색 도구를 함께 제공합니다.",
       "publisher": "KNU AI Assistant",
       "category": "Education",
       "icon": "graduationcap",
       "verified": true,
       "featured": true,
-      "packagePath": "packages/kr.ac.kongju.knu-0.3.1.codmes-plugin",
-      "sha256": "ecae25b767b41ee56fa8d89981d9657e763ec521a074bff0f912c38c4554be6d",
+      "packagePath": "packages/kr.ac.kongju.knu-0.3.3.codmes-plugin",
+      "packageUrl": null,
+      "sha256": "7a5127861c55931de1e4fab6c141ebd2f89ac684c162d7279b18502718be3440",
       "signature": {
         "algorithm": "ed25519",
         "publisherId": "kr.ac.kongju.knu",
         "keyId": "ed25519:13122716edce19defe2e4a2a06295946"
       },
       "dataVersion": 1,
-      "releaseNotes": "포털 로그인 session token을 Surface와 MCP가 함께 사용하도록 인증을 통합했습니다.\n로그아웃 시 현재 KNU session과 Codmes credential을 함께 폐기하며, 학번별 MCP 요청 제한을 적용합니다.\n일반 사용자는 서버의 MCP_AUTH_TOKEN을 별도로 입력하지 않습니다.",
+      "releaseNotes": "공지와 LMS를 Codmes 네이티브 카드 UI로 개선했습니다.\n공지 출처·학과·게시일·마감 상태와 태그를 구분해 표시합니다.\n공지 검색을 Scan과 Deep 도구로 분리하고 로그인 사용자의 학과와 학교 공통 공지를 자동으로 조회합니다.\n포털 사용자 세션을 Surface와 MCP가 함께 사용하도록 인증을 통합했습니다.",
       "platforms": [
         "macos",
         "ios",
