@@ -45,3 +45,20 @@ package를 준비합니다. 개인키는 이 저장소나 PR에 절대 포함하
 운영 Registry는 `signaturePolicy: required`, `governancePolicy: reviewed`를
 강제합니다. 설치 후 update의 `publisherId`도 Codmes 설치 상태에 고정되므로 다른
 Publisher가 같은 plugin id를 탈취할 수 없습니다.
+
+## 승인된 plugin 업데이트 준비
+
+승인된 Publisher의 반복 릴리스는 `registry/index.json`을 수동 편집하지 않습니다.
+Codmes Publisher CLI가 manifest의 버전을 읽어 서명 package 생성, SHA-256 계산과
+Registry 갱신을 한 번에 수행합니다.
+
+```sh
+node /path/to/Codmes/bin/codmes.mjs plugin publisher prepare /path/to/plugin \
+  --sign-key "$HOME/.codmes-publisher/<publisher>/private-key.pem" \
+  --publisher-id <publisher-id> \
+  --registry /path/to/Codmes-Marketplace/registry/index.json \
+  --release-notes-file /path/to/release-notes.md
+```
+
+생성된 `registry/packages/<plugin-id>-<version>.codmes-plugin`과 자동 갱신된
+`registry/index.json`을 같은 Pull Request에 제출합니다.
