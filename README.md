@@ -68,3 +68,9 @@ KNU처럼 Marketplace 운영 조직이 관리하는 공식 Community plugin은 p
 저장소에서 GitHub Release를 발행하면 위 명령, package 업로드, release 브랜치 push와
 Pull Request 생성을 Actions가 대신 수행할 수 있습니다. 자동화는 Marketplace
 `main`에 직접 쓰지 않으며 검증된 Pull Request를 사람이 병합하는 단계는 유지합니다.
+
+호환성은 `platforms`(`macos`, `ios`, `android`, `windows`)와
+`formFactors`(`phone`, `tablet`, `desktop`)로 기록합니다. 이 값은 client Surface/UI
+표시 범위이며 Workspace 설치, server-side LLM/tool/MCP 실행 범위가 아닙니다.
+현재 기기가 호환되지 않아도 Workspace에는 설치할 수 있습니다. 기존 `ipados`는
+validator가 `ios + tablet`로 migration합니다.
