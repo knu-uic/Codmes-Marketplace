@@ -42,6 +42,12 @@ package를 준비합니다. 개인키는 이 저장소나 PR에 절대 포함하
 서명 package와 Registry 변경을 이 저장소에 PR로 제출하면 Marketplace Actions가
 공식 Codmes validator를 사용해 최종 검증합니다.
 
+Marketplace workflow는 Codmes 앱의 임의 commit SHA 대신 검증된
+`codmes-distribution-cli-v1.0.0` tag를 사용합니다. checkout 후 CLI가 보고하는
+버전도 확인하므로 tag와 실제 검사 도구가 다르면 배포를 중단합니다. Codmes 앱의
+UI나 client 버전이 올라가더라도 manifest·서명·Registry 규칙이 그대로라면 이
+도구 버전은 독립적으로 유지됩니다.
+
 운영 Registry는 `signaturePolicy: required`, `governancePolicy: reviewed`를
 강제합니다. 설치 후 update의 `publisherId`도 Codmes 설치 상태에 고정되므로 다른
 Publisher가 같은 plugin id를 탈취할 수 없습니다.
