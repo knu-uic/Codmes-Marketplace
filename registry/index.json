@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-30T00:00:00.000Z",
+  "updatedAt": "2026-08-31T09:03:18.938Z",
   "signaturePolicy": "required",
   "governancePolicy": "reviewed",
   "publishers": [
@@ -52,31 +52,33 @@
     {
       "id": "kr.ac.kongju.knu",
       "name": "KNU",
-      "version": "0.3.3",
+      "version": "0.4.0",
       "description": "공주대학교 공지 Surface와 Codmes용 검색 도구를 함께 제공합니다.",
       "publisher": "KNU AI Assistant",
       "category": "Education",
       "icon": "graduationcap",
       "verified": true,
       "featured": true,
-      "packagePath": "packages/knu-plugin/0.3.3.codmes-plugin",
+      "packagePath": "packages/knu-plugin/0.4.0.codmes-plugin",
       "packageUrl": null,
-      "sha256": "7a5127861c55931de1e4fab6c141ebd2f89ac684c162d7279b18502718be3440",
+      "sha256": "b3a0ccaf80985ea8f34386f0aeba39f5d53e470d599120db1fb775ec8b0688ae",
       "signature": {
         "algorithm": "ed25519",
         "publisherId": "kr.ac.kongju.knu",
         "keyId": "ed25519:13122716edce19defe2e4a2a06295946"
       },
       "dataVersion": 1,
-      "releaseNotes": "공지와 LMS를 Codmes 네이티브 카드 UI로 개선했습니다.\n공지 출처·학과·게시일·마감 상태와 태그를 구분해 표시합니다.\n공지 검색을 Scan과 Deep 도구로 분리하고 로그인 사용자의 학과와 학교 공통 공지를 자동으로 조회합니다.\n포털 사용자 세션을 Surface와 MCP가 함께 사용하도록 인증을 통합했습니다.",
+      "releaseNotes": "# KNU 0.4.0\n\n- Surface 호환성 선언을 OS와 폼팩터로 분리했습니다.\n- macOS, iOS, Android, Windows를 지원 대상으로 선언합니다.\n- phone, tablet, desktop 레이아웃을 모두 지원합니다.\n- 기존 iPadOS 선언은 Codmes 호환성 계층에서 `ios + tablet`로 마이그레이션됩니다.\n- 서버 도구, MCP, 로그인 세션 동작은 클라이언트 플랫폼과 독립적으로 유지됩니다.",
       "platforms": [
         "macos",
-        "ios"
+        "ios",
+        "android",
+        "windows"
       ],
       "formFactors": [
-        "desktop",
         "phone",
-        "tablet"
+        "tablet",
+        "desktop"
       ],
       "permissions": [
         "network:127.0.0.1"
