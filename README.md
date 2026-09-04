@@ -75,6 +75,12 @@ KNU처럼 Marketplace 운영 조직이 관리하는 공식 Community plugin은 p
 Pull Request 생성을 Actions가 대신 수행할 수 있습니다. 자동화는 Marketplace
 `main`에 직접 쓰지 않으며 검증된 Pull Request를 사람이 병합하는 단계는 유지합니다.
 
+MCP 도구 정의를 동적으로 제공하는 plugin은 package에 도구 catalog 복사본을
+넣지 않을 수 있습니다. Codmes는 연결된 MCP의 `tools/list`를 읽고 Workspace별
+사용자 승인 상태를 따로 저장합니다. 따라서 MCP에 새 도구가 추가되어도
+plugin을 다시 배포할 필요는 없지만, 새 도구는 사용자가 승인하기 전까지 AI에
+노출되지 않습니다.
+
 호환성은 `platforms`(`macos`, `ios`, `android`, `windows`)와
 `formFactors`(`phone`, `tablet`, `desktop`)로 기록합니다. 이 값은 client Surface/UI
 표시 범위이며 Workspace 설치, server-side LLM/tool/MCP 실행 범위가 아닙니다.
